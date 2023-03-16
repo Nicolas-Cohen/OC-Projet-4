@@ -1,3 +1,45 @@
+/* LOADER */
+
+.progress {
+    transition: 5s;
+    font-size: 300px;
+
+}
+
+.progress-bar {
+    transform-origin: scaleX(O);
+    
+
+}
+
+/*.progress {
+    &__bar {
+        animation: progress-bar 1000ms;
+    }
+}
+
+@keyframes progress-bar{
+    0% {
+        transform: scaleX(0);
+        opacity: .1;
+    }
+    17% {
+        transform: scaleX(.18);
+    }
+    24% {
+        transform: scaleX(.4);
+    }
+    46% {
+        transform: scaleX(.81);
+    }
+    85%,100% {
+        opacity: 1;
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
 /* HEADER */
 
 header > h1 {
@@ -71,7 +113,7 @@ header > h1 {
     display: flex;
     flex-direction: column;
     margin-left: 20px;
-    margin-right: 20px;
+    margin-right: 35px;
     margin-top: 48px;
 }
 
@@ -80,35 +122,60 @@ header > h1 {
     margin-bottom: 25px;
 }
 
-.fonctionnement > div {
+.fonctionnement-btn {
     display: flex;
     align-items: center;
+    margin-left: 15px;
     padding: 12px;
-    gap: 30px;
     background: #F7F7F7;
+    border: none;
+    font-size: 16px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
     border-radius: 20px;
     margin-bottom: 25px;
+    z-index: 1;
+    position: relative;
+    width: 100%;
 }
 
-.fonctionnement > div > i {
+.fonctionnement-btn:hover > .fonctionnement-hover {
+    opacity: 1;
+}
+
+.fonctionnement-hover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+    background-color: #F5EDFF;
+    border-radius: 20px;
+    transition: opacity 250ms;
+}
+
+.fonctionnement-btn > i {
     font-size: 20px; 
     color:#7E7E7E;
 }
+
+.fonctionnement-text {
+    margin-left: 20px;
+}
+
+.fonctionnement-btn:hover > i {
+    color: #9356DC;
+}
+
 
 .fonctionnement-number {
     color: white;
     background: #9356DC;
     border-radius: 50%;
-    padding: 3px 8px 3px 8px; 
-}
-
-.fonctionnement > div:hover {
-    background-color: #F5EDFF;
-}
-
-.fonctionnement > div:hover > i {
-    color: #9356DC;
+    padding: 3px 8px 3px 8px;
+    position: relative;
+    right: 25px;
 }
 
 .restaurants {
@@ -133,11 +200,16 @@ header > h1 {
     background: white;
     margin-bottom: 20px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
 .card > a {
     color: black;
     text-decoration: none;
+}
+
+.card.img {
+    display: grid;
 }
 
 img {
@@ -171,6 +243,10 @@ img {
     font-size: 30px;
 }
 
+.fa-heart:hover {
+    background: linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+}
+
 /* FOOTER */
 
 footer {
@@ -191,7 +267,7 @@ footer > h1 {
     margin-bottom: 10px;
 }
 
-footer > a {
+footer > div > a {
     margin-bottom: 0px;
     margin-top: 10px;
     margin-left: 25px;
@@ -202,22 +278,19 @@ footer > a {
     color: white;
 }
 
-footer > a > span {
+footer > div > a > span {
     margin-left: 4px;
 }
 
-footer > a > i {
+footer > div > a > i {
     font-size: 13px;
 }
 
-/*
-
-.neutralStar {
-color: var(--main-bg-color)
-}
-*/
-
 /* GENERAL */
+
+:root {
+    --purple-hover: ;
+}
 
 * {
     font-family: 'Roboto', sans-serif;
@@ -226,4 +299,86 @@ color: var(--main-bg-color)
 body {
     max-width: 767px;
     margin: 0;
+}
+
+/* RESPONSIVE */
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+    body {
+        max-width: 100%;
+    }
+
+    header > h1 {
+        font-size: 33px;
+    }
+
+    .reservez > h2 {
+        font-size: 30px;
+    }
+
+
+    .fonctionnement > div {
+        display: flex;
+        gap: 20px;
+    }
+
+    .restaurants > div {
+        display: flex;
+        gap: 30px;
+    }
+
+    footer {
+        padding-top: 25px;
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+    }
+
+    footer > div {
+        display: flex;
+        gap: 30px;
+    }
+
+    footer > h1 {
+        margin-right: 6%;
+        margin-left: 80px;
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+
+    header > h1 {
+        font-size: 37px;
+    }
+
+    .reservez > h2 {
+        font-size: 40px;
+    }
+
+    .fonctionnement > h2 {
+        margin-bottom: 30px;
+    }
+
+    .fonctionnement {
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 60px;
+    }
+
+
+    .restaurants > h2 {
+        margin-left: 10%;
+        margin-bottom: 30px;
+    }
+
+    .restaurants > div {
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 20px;
+    }
+
 }
