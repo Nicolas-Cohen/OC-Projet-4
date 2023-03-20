@@ -1,0 +1,275 @@
+/* HEADER */
+
+header {
+    margin-left: 23px;
+    margin-right: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header > a {
+    font-size: 30px;
+    color: black;
+    text-decoration: none;
+    position: absolute;
+    left: 23px;
+}
+
+header > h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 14px;
+    padding-bottom: 5px;
+    font-family: 'Shrikhand', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+/* MAIN */
+
+.picture {
+    z-index :  -1;
+    position: relative;
+    height: 210px;
+}
+
+.picture > img {
+    width: 100%;
+}
+
+.menu {
+    background: #F7F7F7;
+    border-radius: 40px 40px 0px 0px;
+    padding-bottom: 40px;
+    z-index: 1;
+    margin-top:0;
+}
+
+.title-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 32px;
+    padding-left: 17px;
+    padding-right: 40px;
+    margin-top: 0;
+}
+
+.title-menu > h2 {
+    font-family: 'Shrikhand';
+    font-weight: 400;
+    font-size: 28px;
+}
+
+.title-menu > i {
+    margin-top: 0px;
+    font-size: 30px;
+}
+
+.choice {
+    margin-left: 13px;
+    margin-right: 13px;
+}
+
+.choice > h3 {
+    font-weight: 300;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.choice > h3 > .title-border {
+    padding-bottom: 7px;
+    border-bottom: 3px solid #99E2D0;
+}
+
+.card {
+    background: #FFFFFF;
+    margin-bottom: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card > h4 {
+    margin-top: 12px;
+    margin-left: 12px;
+    margin-bottom: 0px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.content-price {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0px;
+    margin-right: 18px;
+}
+
+.content-price > p {
+    margin-top: 5px;
+}
+
+.content {
+    font-weight: 300;
+    font-size: 16px;
+    margin-left: 12px;
+}
+
+.price {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.cards {
+    margin-bottom: 40px;
+}
+
+.commander {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    color: white;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    text-decoration: none;
+    width: 186px;
+    border-radius: 25px;
+    background: linear-gradient(0deg, #9356DC -5%, #FF79DA 110%);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    transition: 200ms ease-in-out;
+}
+
+.commander:hover {
+    filter: brightness(1.1);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.45);
+}
+
+/* FOOTER */
+
+footer {
+    background: #353535;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+}
+
+footer > h1 {
+    margin-top: 0px;
+    padding-top: 20px;
+    margin-left: 25px;
+    font-family: 'Shrikhand', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+footer > div > a {
+    margin-bottom: 0px;
+    margin-top: 10px;
+    margin-left: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+footer > div > a > span {
+    margin-left: 4px;
+}
+
+footer > div > a > i {
+    font-size: 13px;
+}
+
+/* GENERAL */
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    max-width: 767px;
+    margin: 0;
+}
+
+/* RESPONSIVE */
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+    body {
+        max-width: 100%;
+    }
+
+    header > a {
+        left: 49px;
+    }
+
+
+    header > h1 {
+        font-size: 33px;
+    }
+
+    .menu {
+        padding-left: 15%;
+        padding-right: 15%;
+        margin-top: 35%;
+    }
+
+    .title-menu {
+        justify-content: space-around;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    footer {
+        padding-top: 25px;
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+    }
+
+    footer > div {
+        display: flex;
+        gap: 30px;
+    }
+
+    footer > h1 {
+        margin-right: 6%;
+        margin-left: 80px;
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+    body {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .main-container {
+        position: relative;
+        width: 100%;
+        max-width: 1440px;
+        box-sizing: border-box;
+    }
+
+    header > a {
+        left: 75px;
+    }
+    
+    header > h1 {
+        font-size: 37px;
+    }
+
+    .menu {
+        margin-top: 40%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}

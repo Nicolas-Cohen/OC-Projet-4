@@ -1,44 +1,68 @@
 /* LOADER */
 
-.progress {
-    transition: 5s;
-    font-size: 300px;
+.loader-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: inline-flex;
+    background-color: white;
+    z-index: 1;
+    animation: loader-container-anim 200ms 1s linear forwards;
+}
 
+@keyframes loader-container-anim {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        display: none;
+        width: 1px;
+    }
 }
 
 .progress-bar {
-    transform-origin: scaleX(O);
-    
-
+    margin: auto;
+    width: 50%;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
-/*.progress {
-    &__bar {
-        animation: progress-bar 1000ms;
-    }
+.progress {
+    background-color: grey;
+    width: 0;
+    height: 30px;
+    animation: loader-anim 1s linear forwards;
 }
 
-@keyframes progress-bar{
+@keyframes loader-anim {
     0% {
-        transform: scaleX(0);
-        opacity: .1;
+        width: 0;
     }
-    17% {
-        transform: scaleX(.18);
+
+    20%, 30% {
+        width: 5%;
     }
-    24% {
-        transform: scaleX(.4);
+
+    50% {
+        width: 60%;
     }
-    46% {
-        transform: scaleX(.81);
+
+    70% {
+        width: 65%;
     }
-    85%,100% {
-        opacity: 1;
-    }
-    100% {
-        transform: scaleX(1);
+
+    90%, 100% {
+        width: 100%;
     }
 }
+
+/*** PAGE D'ACCUEIL ***/
 
 /* HEADER */
 
@@ -59,11 +83,12 @@ header > h1 {
 .localisation {
     color: #353535;
     background-color: #EAEAEA;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.15);
+    padding-top: 16px;
+    padding-bottom: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 17px;
-    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 .localisation > i {
@@ -71,6 +96,17 @@ header > h1 {
     color:#353535;
 }
 
+.localisation > input {
+    color: #353535;
+    background-color: #EAEAEA;
+    font-size: 16px;
+    border: none;
+    text-align: center;
+}
+
+.localisation > input::placeholder {
+    color: #353535;
+}
 
 .reservez {
     background-color: #F6F6F6;
@@ -102,11 +138,17 @@ header > h1 {
     color: white;
     text-decoration: none;  
     border-radius: 25px;
-    background: linear-gradient(200deg, #9356DC -5.2%, #FF79DA 110.74%);
+    background: linear-gradient(0deg, #9356DC -5%, #FF79DA 110%);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     margin: auto;
     margin-top: 15px;
     margin-bottom: 57px;
+    transition: 200ms ease-in-out;
+}
+
+.reservez > a:hover {
+    filter: brightness(1.1);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 .fonctionnement {
@@ -152,7 +194,7 @@ header > h1 {
     opacity: 0;
     background-color: #F5EDFF;
     border-radius: 20px;
-    transition: opacity 250ms;
+    transition: 200ms ease-in-out;
 }
 
 .fonctionnement-btn > i {
@@ -167,7 +209,6 @@ header > h1 {
 .fonctionnement-btn:hover > i {
     color: #9356DC;
 }
-
 
 .fonctionnement-number {
     color: white;
@@ -201,6 +242,12 @@ header > h1 {
     margin-bottom: 20px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
     width: 100%;
+    transition: 200ms ease-in-out;
+}
+
+.card:hover {
+    filter: brightness(1.1);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 .card > a {
@@ -208,8 +255,8 @@ header > h1 {
     text-decoration: none;
 }
 
-.card.img {
-    display: grid;
+.card-img {
+    position: relative;
 }
 
 img {
@@ -217,6 +264,23 @@ img {
     height: 170px;
     border-radius: 15px 15px 0px 0px;
     object-fit: cover;
+}
+
+.card-img > p {
+    display: flex;
+    justify-content: center;
+    width: 80px;
+    margin-left: 15px;
+    margin-right: 15px;
+    color: #008766;
+    font-size: 14px;
+    padding: 10px;
+    background: #99E2D0;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .card-content {
@@ -241,10 +305,6 @@ img {
 
 .card-icon > i {
     font-size: 30px;
-}
-
-.fa-heart:hover {
-    background: linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
 }
 
 /* FOOTER */
@@ -297,7 +357,7 @@ footer > div > a > i {
 }
 
 body {
-    max-width: 767px;
+  /*  max-width: 767px; */
     margin: 0;
 }
 
@@ -317,15 +377,19 @@ body {
         font-size: 30px;
     }
 
-
     .fonctionnement > div {
         display: flex;
         gap: 20px;
     }
 
     .restaurants > div {
+        gap: 3%;
         display: flex;
-        gap: 30px;
+        flex-wrap: wrap;
+    }    
+
+    .card {
+        width: 48%;
     }
 
     footer {
@@ -350,6 +414,17 @@ body {
 
 /* Desktop */
 @media screen and (min-width: 1024px) {
+    body {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .main-container {
+        position: relative;
+        width: 100%;
+        max-width: 1440px;
+        box-sizing: border-box;
+    }
 
     header > h1 {
         font-size: 37px;
@@ -369,7 +444,6 @@ body {
         margin-bottom: 60px;
     }
 
-
     .restaurants > h2 {
         margin-left: 10%;
         margin-bottom: 30px;
@@ -380,5 +454,8 @@ body {
         margin-right: 10%;
         margin-bottom: 20px;
     }
-
+    
+    .card {
+        width: 22.7%;
+    }
 }
