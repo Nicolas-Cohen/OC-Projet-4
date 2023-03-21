@@ -62,9 +62,58 @@ header > h1 {
     font-size: 28px;
 }
 
-.title-menu > i {
-    margin-top: 0px;
+.card-icon > i {
     font-size: 30px;
+}
+
+.heart {
+    position: absolute;
+}
+
+.heart:hover {
+    z-index: -1;
+}
+
+.heart-hover {
+    color: transparent;
+}
+
+.heart-hover:hover {
+    background: linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+    -webkit-background-clip: text;
+    animation: heart-anim 200ms ease-in-out forwards;
+}
+
+@keyframes heart-anim {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.choice-one {
+    animation: choice-anim 1s forwards; 
+}
+
+.choice-two {
+    animation: choice-anim 1s 400ms backwards;
+}
+
+.choice-three {
+    animation: choice-anim 1s 800ms backwards;
+}
+
+@keyframes choice-anim {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .choice {
@@ -72,13 +121,13 @@ header > h1 {
     margin-right: 13px;
 }
 
-.choice > h3 {
+h3 {
     font-weight: 300;
     font-size: 16px;
     margin-bottom: 25px;
 }
 
-.choice > h3 > .title-border {
+.title-border {
     padding-bottom: 7px;
     border-bottom: 3px solid #99E2D0;
 }
@@ -92,7 +141,61 @@ header > h1 {
     flex-direction: column;
 }
 
-.card > h4 {
+.confirm {
+    display: none;
+}
+
+.confirm > i {
+    background: white;
+    color: #99E2D0;
+    border-radius: 50%;
+    padding: 4px;
+    animation: i-anim 200ms linear forwards;
+}
+
+@keyframes i-anim {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+a:hover .confirm {
+    background-color: #99E2D0;
+    border-radius: 0px 15px 15px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: confirm-anim 200ms linear forwards;
+}
+
+@keyframes confirm-anim {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 15%;
+        animation-timing-function: linear backwards;
+
+    }
+}
+
+.card > a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-txt {
+    width: 100%;
+}
+
+.card-txt > h4 {
     margin-top: 12px;
     margin-left: 12px;
     margin-bottom: 0px;
@@ -139,6 +242,7 @@ header > h1 {
     background: linear-gradient(0deg, #9356DC -5%, #FF79DA 110%);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     transition: 200ms ease-in-out;
+    animation: choice-anim 1s 800ms backwards;
 }
 
 .commander:hover {

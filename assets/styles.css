@@ -60,6 +60,7 @@
     90%, 100% {
         width: 100%;
     }
+    
 }
 
 /*** PAGE D'ACCUEIL ***/
@@ -305,6 +306,34 @@ img {
 
 .card-icon > i {
     font-size: 30px;
+}
+
+.heart {
+    position: absolute;
+}
+
+.heart:hover {
+    z-index: -1;
+}
+
+.heart-hover {
+    color: transparent;
+}
+
+.heart-hover:hover {
+    background: linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+    -webkit-background-clip: text;
+    animation: heart-anim 200ms ease-in-out forwards;
+}
+
+@keyframes heart-anim {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 /* FOOTER */
