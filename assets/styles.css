@@ -156,7 +156,7 @@ header > h1 {
     display: flex;
     flex-direction: column;
     margin-left: 20px;
-    margin-right: 35px;
+    margin-right: 60px;
     margin-top: 48px;
 }
 
@@ -377,16 +377,11 @@ footer > div > a > i {
 
 /* GENERAL */
 
-:root {
-    --purple-hover: ;
-}
-
 * {
     font-family: 'Roboto', sans-serif;
 }
 
 body {
-  /*  max-width: 767px; */
     margin: 0;
 }
 

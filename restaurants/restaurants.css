@@ -28,16 +28,51 @@ header > h1 {
 
 /* MAIN */
 
-.picture {
+/* PHOTO LA PALETTE */
+.picture-la-palette {
     z-index :  -1;
     position: relative;
     height: 210px;
 }
 
-.picture > img {
+.picture-la-palette > img {
     width: 100%;
 }
 
+/* PHOTO LA NOTE */
+.picture-la-note {
+    z-index :  -1;
+    position: relative;
+    height: 210px;
+}
+
+.picture-la-note > img {
+    width: 100%;
+}
+
+/* PHOTO LA FRANCAISE */
+.picture-la-francaise {
+    z-index :  -1;
+    position: relative;
+    height: 210px;
+}
+
+.picture-la-francaise > img {
+    width: 100%;
+}
+
+/* PHOTO LE DELICE */
+.picture-le-delice {
+    z-index :  -1;
+    position: relative;
+    height: 210px;
+}
+
+.picture-le-delice > img {
+    width: 100%;
+}
+
+/* CARTE */
 .menu {
     background: #F7F7F7;
     border-radius: 40px 40px 0px 0px;
@@ -172,6 +207,7 @@ a:hover .confirm {
     animation: confirm-anim 200ms linear forwards;
 }
 
+
 @keyframes confirm-anim {
     from {
         width: 0;
@@ -179,8 +215,6 @@ a:hover .confirm {
 
     to {
         width: 15%;
-        animation-timing-function: linear backwards;
-
     }
 }
 
@@ -192,7 +226,10 @@ a:hover .confirm {
 }
 
 .card-txt {
-    width: 100%;
+    width: 80%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .card-txt > h4 {
@@ -201,28 +238,27 @@ a:hover .confirm {
     margin-bottom: 0px;
     font-weight: 600;
     font-size: 18px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
-.content-price {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 0px;
-    margin-right: 18px;
-}
-
-.content-price > p {
-    margin-top: 5px;
-}
-
-.content {
+.card-txt > p {
     font-weight: 300;
     font-size: 16px;
     margin-left: 12px;
+    margin-top: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
-.price {
+a > p {
     font-weight: 700;
     font-size: 15px;
+    margin-top: 37px;
+    padding-right: 18px;
+    padding-left: 18px;
 }
 
 .cards {
