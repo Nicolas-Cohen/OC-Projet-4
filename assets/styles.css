@@ -308,32 +308,25 @@ img {
     font-size: 30px;
 }
 
-.heart {
-    position: absolute;
+.card-icon:hover .heart-hover {
+    opacity: 1;
 }
 
-.heart:hover {
-    z-index: -1;
+.card-icon:hover .heart {
+    opacity: 0;
 }
+
+
+.heart {
+    position: absolute;
+} 
 
 .heart-hover {
     color: transparent;
-}
-
-.heart-hover:hover {
     background: linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
     -webkit-background-clip: text;
-    animation: heart-anim 200ms ease-in-out forwards;
-}
-
-@keyframes heart-anim {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+    transition: all 200ms ease-in-out;
+    opacity: 0;
 }
 
 /* FOOTER */
